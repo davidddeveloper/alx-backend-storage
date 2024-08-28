@@ -35,6 +35,7 @@ def log():
     print("    method PUT: {}".format(put_count))
     print("    method PATCH: {}".format(patch_count))
     print("    method DELETE: {}".format(delete_count))
+
     print("{} status check".format(status_check_count))
 
 
