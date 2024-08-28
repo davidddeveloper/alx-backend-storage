@@ -30,11 +30,11 @@ def log():
     # print statistic
     print(doc_count, 'logs')
     print("Methods:")
-    print("    method GET: {}".format(get_count))
-    print("    method POST: {}".format(post_count))
-    print("    method PUT: {}".format(put_count))
-    print("    method PATCH: {}".format(patch_count))
-    print("    method DELETE: {}".format(delete_count))
+    print(" method GET: {}".format(get_count))
+    print(" method POST: {}".format(post_count))
+    print(" method PUT: {}".format(put_count))
+    print(" method PATCH: {}".format(patch_count))
+    print(" method DELETE: {}".format(delete_count))
     print("{} status check".format(status_check_count))
 
 
