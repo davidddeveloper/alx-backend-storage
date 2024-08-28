@@ -13,7 +13,7 @@ c_nginx = db.nginx  # nginx collection
 
 
 def log():
-    """log stats"""
+    """log stats from mongodb"""
 
     doc_count = c_nginx.count_documents({})
 
