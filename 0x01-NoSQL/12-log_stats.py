@@ -7,13 +7,13 @@
 
 from pymongo import MongoClient
 
-client = MongoClient()  # client
-db = client.logs  # database
-c_nginx = db.nginx  # nginx collection
-
 
 def log():
     """log stats from mongodb"""
+
+    client = MongoClient()  # client
+    db = client.logs  # database
+    c_nginx = db.nginx  # nginx collection
 
     doc_count = c_nginx.count_documents({})
 
