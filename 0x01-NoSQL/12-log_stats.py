@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-    12-log_stats.py: log stats
+    12-log_stats.py: script that provides some stats about Nginx logs
+    stored in MongoDB
 
 """
 
