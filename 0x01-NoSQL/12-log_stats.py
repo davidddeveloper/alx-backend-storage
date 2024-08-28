@@ -28,7 +28,7 @@ def log():
         {"path": "/status", "method": "GET"})
 
     # print statistic
-    print(doc_count)
+    print(doc_count, 'logs')
     print("Methods:")
     print("    method GET: {}".format(get_count))
     print("    method POST: {}".format(post_count))
