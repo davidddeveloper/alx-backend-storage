@@ -24,6 +24,7 @@ def call_history(method: Callable) -> Callable:
         self._redis.lpush(f"{method.__qualname__}:inputs", str(args))
         result = method(self, *args, **kwargs)
         self._redis.lpush(f"{method.__qualname__}:outputs", str(result))
+        return result
 
     return wrapper
 
