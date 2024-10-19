@@ -5,7 +5,7 @@
 """
 import redis
 import uuid
-from typing import Union
+from typing import Union, Callable
 
 
 class Cache:
@@ -22,3 +22,16 @@ class Cache:
 
         self._redis.set(key, data)
         return key
+
+    def get(self, key: str, fn: Callable = None):
+        result = self._redis.get(key)
+        if fn:
+            result = fn(result)
+
+        return result
+
+    def get_str():
+        pass
+
+    def get_int():
+        pass
