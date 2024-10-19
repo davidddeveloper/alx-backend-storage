@@ -21,9 +21,9 @@ def count_calls(method: Callable) -> Callable:
 def call_history(method: Callable) -> Callable:
     @wraps(method)
     def wrapper(self, *args, **kwargs):
-        self._redis.lpush(f"{method.__qualname__}:inputs", str(args))
+        self._redis.rpush(f"{method.__qualname__}:inputs", str(args))
         result = method(self, *args, **kwargs)
-        self._redis.lpush(f"{method.__qualname__}:outputs", str(result))
+        self._redis.rpush(f"{method.__qualname__}:outputs", str(result))
         return result
 
     return wrapper
