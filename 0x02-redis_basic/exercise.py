@@ -29,6 +29,19 @@ def call_history(method: Callable) -> Callable:
     return wrapper
 
 
+def replay(fn: Callable) -> Callable:
+    cache = Cache()
+
+    count_calls = cache.get(fn.__qualname__)
+    print(f"{fn.__qualname__} was called {count_calls} times")
+
+    inputs = cache._redis.lrange(f"{fn.__qualname__}:inputs", 0, -1)
+    outputs = cache._redis.lrange(f"{fn.__qualname__}:outpus", 0, -1)
+
+    for key, val in zip(inputs, outputs):
+        print("{fn.__qualname__}({key}) -> {val}")
+
+
 class Cache:
     """
         Represents a Redis Cache
